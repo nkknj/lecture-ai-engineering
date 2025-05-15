@@ -75,7 +75,7 @@ def preprocessor():
 
 def test_model_variance(sample_data, preprocessor):
     """Check Model Stability with different random states"""
-    random_states = [42+i for i in range(20)]
+    random_states = [42 + i for i in range(20)]
     results = list()
 
     for random_state in random_states:
@@ -90,7 +90,10 @@ def test_model_variance(sample_data, preprocessor):
         model = Pipeline(
             steps=[
                 ("preprocessor", preprocessor),
-                ("classifier", RandomForestClassifier(n_estimators=100, random_state=random_state)),
+                (
+                    "classifier",
+                    RandomForestClassifier(n_estimators=100, random_state=random_state),
+                ),
             ]
         )
 
