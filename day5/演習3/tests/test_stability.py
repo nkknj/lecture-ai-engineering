@@ -75,8 +75,8 @@ def preprocessor():
 
 def test_model_variance(sample_data, preprocessor):
     """Check Model Stability with different random states"""
-    random_states=[42+i for i in range(20)]
-    results=list()
+    random_states = [42+i for i in range(20)]
+    results = list()
 
     for random_state in random_states:
         # データの分割
@@ -102,5 +102,5 @@ def test_model_variance(sample_data, preprocessor):
         accuracy = accuracy_score(y_test, y_pred)
         results.append(accuracy)
 
-    var=np.var(results)
-    assert var<0.1, f"乱数の選択による予測精度への影響が大きすぎます: {var}"
+    var = np.var(results)
+    assert var < 0.1, f"乱数の選択による予測精度への影響が大きすぎます: {var}"
