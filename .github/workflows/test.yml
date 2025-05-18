@@ -42,4 +42,4 @@ jobs:
 
     - name: Run stability test
       run: |
-        pytest day5/演習3/tests/test_stability.py -v
+        pytest day5/演習3/tests/test_stability.py -v -s
