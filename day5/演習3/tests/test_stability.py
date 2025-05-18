@@ -106,4 +106,5 @@ def test_model_variance(sample_data, preprocessor):
         results.append(accuracy)
 
     var = np.var(results)
+    print(var)
     assert var < 0.1, f"乱数の選択による予測精度への影響が大きすぎます: {var}"
